@@ -196,6 +196,8 @@
     <None Include="Views\Index.cshtml" />
     <None Include="Views\ContentTypeList.cshtml" />
     <None Include="Verndale.ContentUsages.nuspec" />
+    <None Include="Images\Screenshot1.png" />
+    <None Include="Images\Screenshot2.png" />
     <Content Include="Web.config.transform">
       <SubType>Designer</SubType>
     </Content>
