@@ -5,5 +5,5 @@ NuGet package:
 ```
 Install-Package Verndale.ContentUsages
 ```
-![](Verndale.ContentUsages/Images/Screenshot1.png)
 ![](Verndale.ContentUsages/Images/Screenshot2.png)
+![](Verndale.ContentUsages/Images/Screenshot3.png)
