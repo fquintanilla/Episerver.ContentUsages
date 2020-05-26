@@ -1,0 +1,62 @@
+﻿@using EPiServer.Framework.Web.Resources
+
+@inherits System.Web.Mvc.WebViewPage<Verndale.ContentUsages.Models.ContentTypeUsageViewModels>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+    <!-- Mimic Internet Explorer 9 -->
+    <meta http-equiv="x-ua-compatible" content="IE=9">
+
+    @Html.Raw(ClientResources.RenderResources("Dojo", new[] { ClientResourceType.Style }))
+    @Html.Raw(ClientResources.RenderResources("ShellCore", new[] { ClientResourceType.Style }))
+    @Html.Raw(ClientResources.RenderResources("ShellWidgets", new[] { ClientResourceType.Style }))
+    @Html.Raw(ClientResources.RenderResources("ShellCoreLightTheme"))
+    @Html.Raw(ClientResources.RenderResources("ShellWidgetsLightTheme"))
+
+</head>
+<body>
+    <div class="epi-contentContainer epi-padding">
+
+        <div class="epi-contentArea">
+            <h1 class="EP-prefix">Instances of @(Model.AllContentTypes.FirstOrDefault().ContentType)</h1>
+        </div>
+
+        <p class="EP-systemInfo">
+            Total: @Model.AllContentTypes.Count() item(s)
+        </p>
+
+        <div class="epi-clear">
+            <div>
+                <table class="epi-default epi-marginVertical">
+                    <tbody>
+                        <tr>
+                            <th scope="col">Content Name</th>
+                            <th scope="col">Last Changed</th>
+                            <th scope="col">Changed By</th>
+                            <th scope="col">Language</th>
+                        </tr>
+                        @foreach (var item in Model.AllContentTypes)
+                        {
+                            <tr>
+                                <td style="width:30%;">
+                                    <a href="@item.ContentUrl" target="EPiServerMainUI" title="Page ID: @item.ContentId">
+                                        @item.ContentName
+                                    </a>
+                                </td>
+                                <td>
+                                    <span>@item.PublicationDate</span>
+                                </td>
+                                <td>@item.ChangedBy</td>
+                                <td>@item.Language</td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
