@@ -24,7 +24,7 @@
 
         <p class="EP-systemInfo">
             See Instances of
-            <a href="/ContentUsages/ContentTypeList/@Model.ContentTypeId">
+            <a href="@Url.Action("ContentTypeList", "VerndaleContentUsages")/@Model.ContentTypeId">
                 @Model.ContentType
             </a>
         </p>
@@ -55,7 +55,7 @@ Page ID: @item.ContentId">
                                 <td>@item.ChangedBy</td>
                                 <td>@item.Language</td>
                                 <td>
-                                    <a href="/ContentUsages/ContentTypeList/@item.ContentTypeId">
+                                    <a href="@Url.Action("ContentTypeList", "VerndaleContentUsages")/@item.ContentTypeId">
                                         @item.ContentType
                                     </a>
                                 </td>
